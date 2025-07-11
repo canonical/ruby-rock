@@ -1,0 +1,11 @@
+summary: test the 'ruby 3.3-25.04' project
+
+execute: |
+  echo "Run Ruby smoke test"
+  docker run --rm -v $PWD:/rootfs my-rock-name:latest exec ruby /rootfs/ruby_smoke_test.rb
+
+  docker run --rm -v $PWD:/rootfs my-rock-name:latest exec ruby /rootfs/net_telnet_test.rb
+
+  docker run --rm -v $PWD:/rootfs my-rock-name:latest exec ruby /rootfs/ruby_webrick_test.rb
+
+  docker run --rm -v $PWD:/rootfs my-rock-name:latest exec ruby /rootfs/ruby_xmlrpc_test.rb
