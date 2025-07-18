@@ -7,8 +7,8 @@ description: |
   the web framework Ruby on Rails, and it supports object-oriented, functional,
   and procedural styles.
 
-  This image is a chiselled Ubuntu rock that contains only the Ruby interpreter
-  and its standard dependencies.
+  This image is a chiselled Ubuntu rock that contains only the Ruby core runtime
+  and minimal dependencies for running Ruby applications.
 license: Ruby
 base: bare
 # TODO: Update to 25.04 when available
