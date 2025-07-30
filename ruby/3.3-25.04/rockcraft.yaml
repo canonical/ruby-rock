@@ -27,7 +27,7 @@ environment:
 parts:
   ruby:
     plugin: nil
-    source: https://github.com/cjdcordeiro/chisel-releases.git
+    source: https://github.com/canonical/chisel-releases.git
     source-type: git
     source-branch: 25.04/ruby
     override-build: |
