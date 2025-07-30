@@ -29,7 +29,7 @@ parts:
     plugin: nil
     source: https://github.com/canonical/chisel-releases.git
     source-type: git
-    source-branch: 25.04/ruby
+    source-branch: ubuntu-25.04
     override-build: |
       chisel cut --release ./ --root ${CRAFT_PART_INSTALL} \
           base-files_base \
