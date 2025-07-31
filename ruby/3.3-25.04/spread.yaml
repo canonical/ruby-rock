@@ -23,7 +23,7 @@ suites:
       sudo apt remove --yes retry
 
       # Load the rock into docker
-      ROCK=$(ls $PROJECT_PATH/my-rock-name*.rock)
+      ROCK=$(ls $PROJECT_PATH/*.rock)
       sudo rockcraft.skopeo --insecure-policy copy "oci-archive:$ROCK" docker-daemon:my-rock-name:latest
 
     restore: |
