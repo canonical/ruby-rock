@@ -3,8 +3,10 @@
 require 'xmlrpc/server'
 require 'xmlrpc/client'
 require 'thread'
+require 'timeout'
 
 # Run server in a new thread, otherwise the script blocks
+server_started = false
 server_thread = Thread.new do
   server = XMLRPC::Server.new(8080, '127.0.0.1')
 
@@ -15,13 +17,15 @@ server_thread = Thread.new do
   # trap to shutdown server on interrupt
   trap("INT") { server.shutdown }
 
+  server_started = true
+  puts "XMLRPC server started on port 8080."
   server.serve
 end
 
-# Give the server a moment to start
-sleep 0.5
-
 begin
+  Timeout::timeout(5) do
+    sleep 0.1 while !server_started
+  end
   client = XMLRPC::Client.new("127.0.0.1", "/", 8080)
   result = client.call("sample.add", 2, 3)
   puts "2+3 - Client got result: #{result}\n"  # should print 5
