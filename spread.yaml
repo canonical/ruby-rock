@@ -1,4 +1,4 @@
-project: my-rock-name
+project: ruby-rock
 
 backends:
   craft:
@@ -24,10 +24,10 @@ suites:
 
       # Load the rock into docker
       ROCK=$(ls $PROJECT_PATH/*.rock)
-      sudo rockcraft.skopeo --insecure-policy copy "oci-archive:$ROCK" docker-daemon:my-rock-name:latest
+      sudo rockcraft.skopeo --insecure-policy copy "oci-archive:$ROCK" docker-daemon:ruby-rock:latest
 
     restore: |
-      docker image rm --force my-rock-name:latest
+      docker image rm --force ruby-rock:latest
 
 exclude:
   - .git
