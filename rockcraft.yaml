@@ -21,7 +21,7 @@ platforms:
 
 environment:
   RUBYOPT: "--disable-did_you_mean --disable-error_highlight --disable-syntax_suggest"
-  GEM_PATH: "/usr/lib/ruby/gems/3.3.0/gems:/usr/share/rubygems-integration/all"
+  GEM_PATH: "/usr/lib/ruby/gems/3.2.0/gems:/usr/share/rubygems-integration/all"
 
 parts:
   ruby:
