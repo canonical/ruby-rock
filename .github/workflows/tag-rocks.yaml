@@ -34,6 +34,11 @@ jobs:
 
             base=$(echo "$base" | sed 's/[^0-9.]//g')
 
+            # skip EOL base
+            if [[ "$base" == "25.04" ]]; then
+              continue
+            fi
+
             if [[ "$version" == "latest" ]]; then
               tag="latest"
               echo "::warning file=$file::Using 'latest' as version — tag set to 'latest'"
