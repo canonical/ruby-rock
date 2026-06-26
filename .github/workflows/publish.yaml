@@ -38,7 +38,6 @@ jobs:
       rock-repo-commit: ${{ github.head_ref || github.ref_name }}
       rockfile-directory: ${{ matrix.rock.location }}
       oci-archive-name: ${{ matrix.rock.name }}_${{ matrix.rock.tag }}
-      arch-map: ${{ needs.get-runners.outputs.arch-map }}
       rockcraft-test: ${{ matrix.rock.test }}
 
   test:
