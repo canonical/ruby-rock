@@ -49,7 +49,7 @@ jobs:
     uses: canonical/oci-factory/.github/workflows/Test-Rock.yaml@main
     with:
       oci-archive-name: ${{ matrix.rock.name }}_${{ matrix.rock.tag }}
-      trivyignore-path: .trivyignore
+      trivyignore-path: ${{ matrix.rock.location }}/.trivyignore
     secrets:
       host-github-token: ${{ secrets.GITHUB_TOKEN }}
 
