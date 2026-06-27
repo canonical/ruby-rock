@@ -35,7 +35,7 @@ jobs:
             base=$(echo "$base" | sed 's/[^0-9.]//g')
 
             # skip EOL base
-            if [[ "$base" == "25.04" ]]; then
+            if [[ "$base" == "25.04" ]] || [[ "$location" == *"25.04"* ]]; then
               continue
             fi
 
