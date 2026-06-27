@@ -58,6 +58,7 @@ jobs:
     uses: canonical/oci-factory/.github/workflows/Test-Rock.yaml@main
     with:
       oci-archive-name: ${{ matrix.artifact-name }}
+      trivyignore-path: ${{ matrix.directory }}/.trivyignore
     secrets:
       pro-artifact-passphrase: ${{ secrets[matrix.pro-artifact-passphrase] }}
 
