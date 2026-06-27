@@ -1,0 +1,49 @@
+#####################################################
+# Trivy Ignore File for ruby-rock/3.2-24.04         #
+# Ruby 3.2 with Ubuntu 24.04 LTS (noble)            #
+#####################################################
+
+#####################################################
+# The following vulnerabilities are NOT FIXED yet.  #
+# References: https://ubuntu.com/security/<CVE-ID>  #
+#####################################################
+
+# ERB has an @_init deserialization guard bypass via def_module / def_method / def_class 
+# Affects: 3.2-24.04, 3.3-25.04
+# CVSS: 8.1 (High) | Ubuntu priority: Medium | Status (24.04 noble): Needs evaluation
+CVE-2026-41316
+
+# net-imap vulnerable to command Injection via "raw" arguments to multiple commands 
+# Affects: 3.2-24.04, 3.3-25.04
+# CVSS: 5.8 (Moderate) | Ubuntu priority: Medium | Status (24.04 noble): Vulnerable
+CVE-2026-42257
+
+# net-imap has quadratic complexity when reading response literals 
+# Affects: 3.2-24.04, 3.3-25.04
+# CVSS: 2.3 (Low) | Ubuntu priority: Medium | Status (24.04 noble): Not affected
+CVE-2026-42245
+
+# net-imap vulnerable to STARTTLS stripping via invalid response timing 
+# Affects: 3.2-24.04, 3.3-25.04
+# CVSS: 7.6 (High) | Ubuntu priority: Medium | Status (24.04 noble): Vulnerable
+CVE-2026-42246
+
+# URI Credential Leakage Bypass over CVE-2025-27221 
+# Affects: 3.2-24.04, 3.3-25.04
+# CVSS: 2.7 (Low) | Ubuntu priority: Low | Status (24.04 noble): Fixed
+CVE-2025-61594
+
+# Buffer Overflow in Zlib::GzipReader ungetc via large input leads to memory corruption 
+# Affects: 3.2-24.04, 3.3-25.04
+# CVSS: 5.9 (Medium) | Ubuntu priority: Medium | Status (24.04 noble): Needs evaluation
+CVE-2026-27820
+
+# REXML ReDoS vulnerability 
+# Affects: 3.2-24.04
+# CVSS: 6.6 (High) | Ubuntu priority: Medium | Status (24.04 noble): Some fixes available 8 of 9
+CVE-2024-49761
+
+# HTTP Request Smuggling in ruby webrick 
+# Affects: 3.2-24.04, 3.3-25.04
+# CVSS: 7.5 (High) | Ubuntu priority: Medium | Status (24.04 noble): Fixed
+CVE-2024-47220
