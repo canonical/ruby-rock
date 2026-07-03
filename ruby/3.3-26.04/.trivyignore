@@ -1,0 +1,33 @@
+#####################################################
+# Trivy Ignore File for ruby-rock/3.3-26.04         #
+# Ruby 3.3 with Ubuntu 26.04 LTS (resolute)         #
+#####################################################
+
+#####################################################
+# The following vulnerabilities are NOT FIXED yet.  #
+# References: https://ubuntu.com/security/<CVE-ID>  #
+#####################################################
+
+# ERB has an @_init deserialization guard bypass via def_module / def_method / def_class
+# erb 4.0.3 | CVSS: 8.1 (High)
+CVE-2026-41316
+
+# net-imap vulnerable to command Injection via "raw" arguments to multiple commands
+# net-imap 0.4.19 | CVSS: 5.8 (Moderate)
+CVE-2026-42257
+
+# net-imap has quadratic complexity when reading response literals
+# net-imap 0.4.19 | CVSS: 2.3 (Low)
+CVE-2026-42245
+
+# net-imap vulnerable to STARTTLS stripping via invalid response timing
+# net-imap 0.4.19 | CVSS: 7.6 (High)
+CVE-2026-42246
+
+# URI Credential Leakage Bypass over CVE-2025-27221
+# uri 0.13.2 | CVSS: 2.7 (Low)
+CVE-2025-61594
+
+# Buffer Overflow in Zlib::GzipReader ungetc via large input leads to memory corruption
+# zlib 3.1.1 | CVSS: 5.9 (Medium)
+CVE-2026-27820

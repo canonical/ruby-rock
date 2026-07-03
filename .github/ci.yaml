@@ -23,6 +23,7 @@ registries:
 
 images:
   - directory: "ruby/3.2-24.04"
+  - directory: "ruby/3.3-26.04"
 
   ## Example of specifying different registries for a specific rock
   # - directory: "my-rock-name/0.1-24.04"
