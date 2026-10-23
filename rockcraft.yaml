@@ -11,14 +11,15 @@ description: |
   and minimal dependencies for running Ruby applications.
 license: Ruby
 base: bare
-# TODO: Update to 25.04 when available
-build-base: ubuntu@24.04
+build-base: devel
 
 run-user: _daemon_
 
 platforms:
   amd64:
   arm64:
+  ppc64el:
+  s390x:
 
 environment:
   RUBYOPT: "--disable-did_you_mean --disable-error_highlight --disable-syntax_suggest"
@@ -27,15 +28,11 @@ environment:
 parts:
   ruby:
     plugin: nil
-    source: https://github.com/canonical/chisel-releases.git
-    source-type: git
-    source-branch: ubuntu-25.04
-    override-build: |
-      chisel cut --release ./ --root ${CRAFT_PART_INSTALL} \
-          base-files_base \
-          base-files_release-info \
-          base-files_chisel \
-          ruby_core
+    stage-packages:
+      - base-files_base
+      - base-files_release-info
+      - base-files_chisel
+      - ruby_core
 
   deb-security-manifest:
     plugin: make
