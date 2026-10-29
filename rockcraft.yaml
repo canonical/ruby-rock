@@ -11,7 +11,7 @@ description: |
   and minimal dependencies for running Ruby applications.
 license: Ruby
 base: bare
-build-base: devel
+build-base: ubuntu@26.10
 
 run-user: _daemon_
 
