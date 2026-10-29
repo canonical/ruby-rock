@@ -11,7 +11,8 @@ description: |
   and minimal dependencies for running Ruby applications.
 license: Ruby
 base: bare
-build-base: ubuntu@26.10
+# TODO: Update once 26.10 is stabilized
+build-base: devel
 
 run-user: _daemon_
 
@@ -28,11 +29,22 @@ environment:
 parts:
   ruby:
     plugin: nil
-    stage-packages:
-      - base-files_base
-      - base-files_release-info
-      - base-files_chisel
-      - ruby_core
+
+    # TODO: Uncomment once 26.10 is stabilized
+    # stage-packages:
+    #   - base-files_base
+    #   - base-files_release-info
+    #   - base-files_chisel
+    #   - ruby_core
+
+    # TODO: Remove once 26.10 is stabilized
+    override-build: |
+      craftctl default
+      chisel cut --release ubuntu-26.10 --root ${CRAFT_PART_INSTALL} \
+        base-files_base \
+        base-files_release-info \
+        ruby_core
+
 
   deb-security-manifest:
     plugin: make
